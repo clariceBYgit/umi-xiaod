@@ -1,0 +1,10 @@
+
+.title {
+  background: rgb(237, 121, 242);
+}
+
+.loadstatus{
+  position: absolute;
+  left: 50%;
+  top: 25%;
+}

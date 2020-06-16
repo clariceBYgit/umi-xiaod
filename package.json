@@ -1,0 +1,23 @@
+{
+  "name": "umi-xiaod",
+  "version": "1.0.0",
+  "description": "使用umi开发react项目",
+  "main": "index.js",
+  "scripts": {
+    "start": "umi dev",
+    "build": "umi build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@umijs/plugin-antd": "^0.6.0",
+    "@umijs/plugin-dva": "^0.7.2",
+    "antd": "^4.3.3",
+    "axios": "^0.19.2",
+    "dva": "^2.4.1"
+  },
+  "devDependencies": {
+    "umi": "^3.2.3"
+  }
+}
