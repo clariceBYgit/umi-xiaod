@@ -29,6 +29,7 @@ export function _onCreate(options = {}) {
     app.use(plugin);
   });
   app.model({ namespace: 'goods', ...(require('D:/fighting/study/1/react-practice/umi-xiaod/src/models/goods.js').default) });
+app.model({ namespace: 'user', ...(require('D:/fighting/study/1/react-practice/umi-xiaod/src/models/user.js').default) });
   return app;
 }
 

@@ -1,13 +1,20 @@
 import React, { Component } from 'react'
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { Layout, Menu, Dropdown, Avatar } from 'antd';
 import styles from './index.css'
 import logo from '../../public/logo.jpg'
-import { Link } from 'umi'
+import { Link, connect } from 'umi'
 import menuList from '../../mock/menu'
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
-
-
+// 注入用户状态和退出登录的方法
+@connect(
+    state=>({
+        userinfo:state.user
+    }),
+    {
+        logout:()=>({type:"user/logout"}) //派发的action是命名空间+reducer
+    }
+)
 export default class index extends Component {
     state = {
         siderMenu:[],
@@ -30,7 +37,16 @@ export default class index extends Component {
         // console.log(collapsed);
         this.setState({ collapsed })
     }
+   
     render() {
+        // 定义下拉菜单内容
+        const menu = (
+            <Menu>
+              <Menu.Item>个人中心</Menu.Item>
+              <Menu.Item onClick={()=>this.props.logout()}>退出登录</Menu.Item>
+              
+            </Menu>
+          );
         // console.log(this.props)
         const routeName='/'+this.props.location.pathname.split('/')[1]
         const selectedKeys = [routeName]
@@ -54,6 +70,14 @@ export default class index extends Component {
                                 <Link onClick={()=>this.levelOne(2)} to='/goods'>商品</Link>
                                 </Menu.Item>
                         </Menu>
+                        <div className={styles.user}>
+                            <Avatar size='large' src={this.props.userinfo.userimg} />
+                            <Dropdown overlay={menu}>
+                                <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+                                    {this.props.userinfo.username}
+                                </a>
+                            </Dropdown>
+                        </div>
                     </Header>
                     <Layout className={styles.content}>
                         <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse} width={200} className="site-layout-background">

@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 // import styles from './notfound.css'; 
 // import {Exception} from 'ant-design-pro';
 import Exception from 'ant-design-pro/lib/Exception';

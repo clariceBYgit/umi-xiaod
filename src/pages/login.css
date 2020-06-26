@@ -1,4 +1,29 @@
 
 .title {
-  background: rgb(242, 121, 186);
+  background: rgb(242, 121, 221);
+}
+.qx{
+  width: 500px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  /* // translate3d会比2d更流畅 会开启一个GPU加速 */
+  transform: translate3d(-50%, -50%, 0);
+  margin-top: -30px;
+  /* // transform:translate(-50%, -50%) */
+  border: 1px solid #ddd;
+  padding: 32px 21px;
+  border-radius: 6px;
+}
+
+.logo{
+    display: block;
+    width: 25%;
+    height: 90px;
+    margin: 10px auto;
+}
+
+.btn{
+  width:100%;
+  height:40px;
 }

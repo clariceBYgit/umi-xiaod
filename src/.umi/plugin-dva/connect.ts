@@ -7,6 +7,7 @@ import { match } from 'react-router-dom';
 import { Location, LocationState, History } from 'history';
 
 export * from 'D:/fighting/study/1/react-practice/umi-xiaod/src/models/goods';
+export * from 'D:/fighting/study/1/react-practice/umi-xiaod/src/models/user';
 
 export interface Action<T = any> {
   type: T
