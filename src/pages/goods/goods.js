@@ -15,6 +15,7 @@ import { Card, Spin, Button } from 'antd'
       {type:'goods/addGoods',payload:{title}}
     )
   }
+  
 )
 
 export default class extends Component {
